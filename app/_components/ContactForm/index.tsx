@@ -2,39 +2,35 @@
  
 import { useState } from "react";
 import styles from "./index.module.css";
+import { createContactData } from "@/app/_actions/contact";
  
-const initialState = {
-    status: "",
-    message: "",
-};
+type FormStatus = {
+    status: "success" | "error" | "initial";
+    message: string;
+}
  
 export default function ContactForm() {
-    const [state, setState] = useState(initialState);
- 
-    interface FormState {
-        status: string;
-        message: string;
-    }
- 
-    interface FormResult {
-        status: string;
-        message: string;
-    }
+  // フォームの状態管理
+    const [status, setStatus] = useState<FormStatus>({
+        status: "initial",
+        message: "",
+    });
+
+    // フォームの入力値を管理
+    const [lastName, setLastName] = useState<string>("");
+    const [firstName, setFirstName] = useState<string>("");
+    const [company, setCompany] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
  
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
- 
-        const response = await fetch("/api/contact", {
-        method: "POST",
-        body: formData,
-        });
- 
-        const result: FormResult = await response.json();
-        setState(result);
+        const response = await createContactData(status, formData);
+        setStatus(response);
     };
  
-    if (state.status === "success") {
+    if (status.status === "success") {
         return (
             <p className={styles.success}>
                 お問い合わせいただき、ありがとうございます。
@@ -49,27 +45,64 @@ export default function ContactForm() {
             <div className={styles.horizontal}>
                 <div className={styles.item}>
                     <label className={styles.label} htmlFor="lastname">姓</label>
-                    <input className={styles.textfield} type="text" id="lastname" name="lastname" required />
+                    <input
+                      className={styles.textfield}
+                      type="text"
+                      id="lastname"
+                      value={lastName}
+                      onChange={(event) => setLastName(event.target.value)}
+                      name="lastname"
+                      required
+                    />
                 </div>
                 <div className={styles.item}>
                     <label className={styles.label} htmlFor="firstname">名</label>
-                    <input className={styles.textfield} type="text" id="firstname" name="firstname" required />
+                    <input
+                      className={styles.textfield}
+                      type="text"
+                      id="firstname"
+                      value={firstName}
+                      onChange={(event) => setFirstName(event.target.value)}
+                      name="firstname"
+                      required
+                    />
                 </div>
             </div>
             <div className={styles.item}>
                 <label className={styles.label} htmlFor="company">会社名</label>
-                <input className={styles.textfield} type="text" id="company" name="company" />
+                <input 
+                  className={styles.textfield}
+                  type="text"
+                  id="company"
+                  value={company}
+                  onChange={(event) => setCompany(event.target.value)}
+                  name="company"
+                />
             </div>
             <div className={styles.item}>
                 <label className={styles.label} htmlFor="email">メールアドレス</label>
-                <input className={styles.textfield} type="email" id="email" name="email" required />
+                <input 
+                  className={styles.textfield}
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  name="email"
+                  required
+                />
             </div>
             <div className={styles.item}>
                 <label className={styles.label} htmlFor="message">メッセージ</label>
-                <textarea className={styles.textarea} id="message" name="message" required />
+                <textarea 
+                  className={styles.textarea}
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
+                  id="message"
+                  name="message"
+                  required />
             </div>
             <div className={styles.actions}>
-                {state.status === "error" && <p className={styles.error}>{state.message}</p>}
+                {status.status === "error" && <p className={styles.error}>{status.message}</p>}
                 <input type="submit" value="送信する" className={styles.button} />
             </div>
         </form>

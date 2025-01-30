@@ -5,7 +5,12 @@ function validateEmail(email: string) {
   return pattern.test(email);
 }
 
-export async function createContactData(_prevState: any, formData: FormData) {
+type Return = {
+  status: "success" | "error";
+  message: string;
+}
+
+export async function createContactData(_prevState: any, formData: FormData): Promise<Return> {
   // formのname属性ごとにformData.get()で値を取り出すことができる
   const rawFormData = {
     lastname: formData.get("lastname") as string,
@@ -93,6 +98,7 @@ export async function createContactData(_prevState: any, formData: FormData) {
 
   try {
     await result.json();
+    console.log("success")
   } catch (e) {
     console.log(e);
     return {
