@@ -53,6 +53,7 @@ export default function ContactForm() {
                       onChange={(event) => setLastName(event.target.value)}
                       name="lastname"
                       required
+                      placeholder="horie"
                     />
                 </div>
                 <div className={styles.item}>
@@ -65,6 +66,7 @@ export default function ContactForm() {
                       onChange={(event) => setFirstName(event.target.value)}
                       name="firstname"
                       required
+                      placeholder="ryosei"
                     />
                 </div>
             </div>
@@ -77,6 +79,7 @@ export default function ContactForm() {
                   value={company}
                   onChange={(event) => setCompany(event.target.value)}
                   name="company"
+                  placeholder="office"
                 />
             </div>
             <div className={styles.item}>
@@ -89,6 +92,7 @@ export default function ContactForm() {
                   onChange={(event) => setEmail(event.target.value)}
                   name="email"
                   required
+                  placeholder="24a31e0013@edu.ac.jp"
                 />
             </div>
             <div className={styles.item}>
@@ -99,7 +103,10 @@ export default function ContactForm() {
                   onChange={(event) => setMessage(event.target.value)}
                   id="message"
                   name="message"
-                  required />
+                  required 
+                  placeholder="comennt"
+                  />
+                  
             </div>
             <div className={styles.actions}>
                 {status.status === "error" && <p className={styles.error}>{status.message}</p>}

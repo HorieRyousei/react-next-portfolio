@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './About.module.css';
+import Image from 'next/image';
 
 export default function About() {
   return (
     <section id= "about" className={styles.aboutContainer}>
       <div className={styles.leftSection}>
-        <img src="/about/about-2.jpg" alt="About Us" />
+        <Image src="/horie-1.png" alt="About Us" width={75} height={100}/>
         <div className={styles.description}>
           <p>
             <span>

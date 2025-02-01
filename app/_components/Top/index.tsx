@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Top.module.css';
+import Image from 'next/image';
 
 export default function Top() {
   return (
@@ -11,7 +12,7 @@ export default function Top() {
         </h1>
       </div>
       <div className={styles.imgContainer}>
-        <img src="/topImage/top-1.jpg" alt="トップ画像" />
+        <Image src="/aa.jpeg" alt="トップ画像" width={100} height={75}/>
       </div>
     </section>
   );

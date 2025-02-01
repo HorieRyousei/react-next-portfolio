@@ -7,9 +7,10 @@
   padding: 100px;
   width: 100%;
   gap: 16px;
+  margin-top: 20px;
 }
 
-.logo img {
+.Logo img {
   width: 80%;
 }
 

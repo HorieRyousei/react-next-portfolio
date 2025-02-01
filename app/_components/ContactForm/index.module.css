@@ -24,18 +24,22 @@
 
 .textfield {
   border: 1px solid var(--color-border);
+  border-color: black;
   padding: 8px;
   border-radius: 4px;
   line-height: 1.5;
   width: 100%;
+  background-color: #FFDCB3;
 }
 
 .textarea {
   border: 1px solid var(--color-border);
+  border-color: black;
   padding: 8px;
   border-radius: 4px;
   line-height: 1.5;
   width: 100%;
+  background-color: #FFDCB3;
 }
 
 .actions {

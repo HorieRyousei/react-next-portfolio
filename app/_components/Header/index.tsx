@@ -22,15 +22,6 @@ export default function Header() {
           <li className={styles.navLink}>
             <Link href="/#hairCatalog">NEWS</Link>
           </li>
-          <li className={styles.navLink}>
-            <Link href="/#menu">MENU</Link>
-          </li>
-          <li className={styles.navLink}>
-            <Link href="/#staff">STAFF</Link>
-          </li>
-          <li className={styles.navLink}>
-            <Link href="/#access">ACCESS</Link>
-          </li>
         </ul>
       </div>
     </section>
