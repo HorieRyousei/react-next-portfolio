@@ -5,6 +5,8 @@ import { getNewsList } from '@/app/_libs/microcms';
 import { TOP_NEWS_LIMIT } from '@/app/_constants';
 import NewsList from '@/app/_components/NewsList';
 import ButtonLink from '@/app/_components/ButtonLink';
+import Top from './_components/Top';
+import About from './_components/About';
 
 export const revalidate = 60;
 
@@ -14,6 +16,8 @@ export default async function Home() {
   });
   return (
     <>
+      <Top />
+      <About />
       <section className={styles.top}>
         <div>
           <h1 className={styles.title}>テクノロジーの力で世界を変える</h1>
@@ -21,13 +25,6 @@ export default async function Home() {
             私たちは市場をリードしているグローバルテックカンパニーです。
           </p>
         </div>
-        <Image
-          className={styles.bgimg}
-          src="/img-mv.jpg"
-          alt=""
-          width={4000}
-          height={1200}
-        />
       </section>
       <section className={styles.news}>
         <h2 className={styles.newsTitle}>News</h2>

@@ -1,0 +1,34 @@
+.topContainer {
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  padding-bottom: 80px;
+}
+
+.textContainer {
+  width: 25%;
+}
+
+.textContainer h1 {
+  writing-mode: vertical-rl;
+  margin: 0 auto;
+  font-size: min(10vw, 180px);
+  font-weight: bold;
+  line-height: 1.10em;
+}
+
+.textContainer h1 p {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.imgContainer {
+  width: 75%;
+  overflow: hidden;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+}
