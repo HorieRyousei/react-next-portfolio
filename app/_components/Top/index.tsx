@@ -12,7 +12,8 @@ export default function Top() {
         </h1>
       </div>
       <div className={styles.imgContainer}>
-        <Image src="/aa.jpeg" alt="トップ画像" width={100} height={75}/>
+          <Image src="/aa.jpeg" alt="トップ画像" width={1024} height={768}/>
+          <div className="light-leak"></div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 .aboutContainer {
-  padding-bottom: 80px;
+  /*padding-top: 80px;*/
   display: flex;
   gap: 40px;
   width: 100%;
@@ -9,7 +9,7 @@
   font-size: min(10vw, 180px);
   margin: 0 auto;
   writing-mode: vertical-rl;
-  line-height: 0.85em;
+  line-height: 0.8em;
 }
 
 .aboutContainer h2 p {
@@ -24,10 +24,12 @@
 
 .leftSection img {
   width: 50vw;
+  height: 50vw;
 }
 
 .rightSection {
   width: 24%;
+  margin-top: 40px;
 }
 
 .description {
@@ -57,3 +59,4 @@
     padding: 8px 24px;
   }
 }
+

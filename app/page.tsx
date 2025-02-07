@@ -28,6 +28,8 @@ export default async function Home() {
           </p>
         </div>
       </section>
+
+      <div className={styles.container}>
       <News /> 
       <section className={styles.news}>
         <h2 className={styles.newsTitle}>News</h2>
@@ -36,6 +38,7 @@ export default async function Home() {
           <ButtonLink href="/news">もっとみる</ButtonLink>
         </div>
       </section>
+      </div>
       <ReserveButton />
     </>
   );

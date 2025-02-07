@@ -6,15 +6,15 @@ export default function About() {
   return (
     <section id= "about" className={styles.aboutContainer}>
       <div className={styles.leftSection}>
-        <Image src="/horie-1.png" alt="About Us" width={75} height={100}/>
+        <Image src="/horie-1.png" alt="About Us" width={1024} height={1024}/>
         <div className={styles.description}>
           <p>
             <span>
-              Simple
-              HairSalonは、鮮やかでモダンな内装が特徴のおしゃれな美容室です。店内には、高品質な美容用品や機器が整然と並び、スタイリストたちは最新のトレンドに基づいたスタイリングやカラーリングを提供しています。
+              どうも初めまして、京都デザイン&テクノロジー専門学校・ホワイトハッカー専攻の堀江凌世です
+              
             </span>
             <span>
-              このサロンは、お客様に完璧なヘアスタイルを提供するために、トレンドや最新技術に常に敏感で、常に自己啓発をしています。また、スタイリストは豊富な経験を持ち、お客様の髪の質や骨格に合わせた最適なスタイルを提供するため、カウンセリングにも力を入れています。
+
             </span>
           </p>
         </div>
